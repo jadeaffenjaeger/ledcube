@@ -12,3 +12,6 @@ Inputs on the board are:
     3 Register Clock/Latch
     4 Serial Data
     5 GND
+
+Assembled Board:
+![Assembled Driver Board](/img/board_asem.jpg)
