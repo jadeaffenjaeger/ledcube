@@ -104,12 +104,12 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-      uint8_t data1[] = {0xaa, 0xaa};
+      uint8_t data1[] = {0xa5, 0xa5};
       send_data(&data1[0]);
       HAL_Delay(100);
-      /*uint8_t data2[] = {0x55, 0x55};*/
-      /*send_data(&data2[0]);*/
-      /*HAL_Delay(100);*/
+      uint8_t data2[] = {0x5a, 0x5a};
+      send_data(&data2[0]);
+      HAL_Delay(100);
 
   }
   /* USER CODE END 3 */

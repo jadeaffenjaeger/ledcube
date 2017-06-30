@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccP3X5za.s 			page 1
+ARM GAS  /tmp/cc2k6l4J.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
   31:Src/stm32f1xx_it.c ****   ******************************************************************************
   32:Src/stm32f1xx_it.c ****   */
   33:Src/stm32f1xx_it.c **** /* Includes ------------------------------------------------------------------*/
-ARM GAS  /tmp/ccP3X5za.s 			page 2
+ARM GAS  /tmp/cc2k6l4J.s 			page 2
 
 
   34:Src/stm32f1xx_it.c **** #include "stm32f1xx_hal.h"
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
   70:Src/stm32f1xx_it.c **** {
   46              		.loc 1 70 0
   47              		.cfi_startproc
-ARM GAS  /tmp/ccP3X5za.s 			page 3
+ARM GAS  /tmp/cc2k6l4J.s 			page 3
 
 
   48              		@ Volatile: function does not return.
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
   89:Src/stm32f1xx_it.c ****   /* USER CODE END MemoryManagement_IRQn 0 */
   90:Src/stm32f1xx_it.c ****   while (1)
   91:Src/stm32f1xx_it.c ****   {
-ARM GAS  /tmp/ccP3X5za.s 			page 4
+ARM GAS  /tmp/cc2k6l4J.s 			page 4
 
 
   92:Src/stm32f1xx_it.c ****   }
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  117              		.cfi_endproc
  118              	.LFE68:
  120              		.section	.text.SVC_Handler,"ax",%progbits
-ARM GAS  /tmp/ccP3X5za.s 			page 5
+ARM GAS  /tmp/cc2k6l4J.s 			page 5
 
 
  121              		.align	1
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  147:Src/stm32f1xx_it.c **** {
  150              		.loc 1 147 0
  151              		.cfi_startproc
-ARM GAS  /tmp/ccP3X5za.s 			page 6
+ARM GAS  /tmp/cc2k6l4J.s 			page 6
 
 
  152              		@ args = 0, pretend = 0, frame = 0
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  168:Src/stm32f1xx_it.c **** 
  169:Src/stm32f1xx_it.c **** /**
  170:Src/stm32f1xx_it.c **** * @brief This function handles System tick timer.
-ARM GAS  /tmp/ccP3X5za.s 			page 7
+ARM GAS  /tmp/cc2k6l4J.s 			page 7
 
 
  171:Src/stm32f1xx_it.c **** */
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  221              		.cfi_startproc
  222              		@ args = 0, pretend = 0, frame = 0
  223              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccP3X5za.s 			page 8
+ARM GAS  /tmp/cc2k6l4J.s 			page 8
 
 
  224 0000 08B5     		push	{r3, lr}
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  262 0002 0B49     		ldr	r1, .L22
  263 0004 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  264 0006 0B48     		ldr	r0, .L22+4
-ARM GAS  /tmp/ccP3X5za.s 			page 9
+ARM GAS  /tmp/cc2k6l4J.s 			page 9
 
 
  265 0008 0468     		ldr	r4, [r0]
@@ -507,9 +507,9 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  283 0024 FFF7FEFF 		bl	HAL_TIM_IRQHandler
  284              	.LVL3:
  219:Src/stm32f1xx_it.c ****   /* USER CODE BEGIN TIM4_IRQn 1 */
- 220:Src/stm32f1xx_it.c ****   toggle_led();
+ 220:Src/stm32f1xx_it.c ****   gpio_toggle_led();
  285              		.loc 1 220 0
- 286 0028 FFF7FEFF 		bl	toggle_led
+ 286 0028 FFF7FEFF 		bl	gpio_toggle_led
  287              	.LVL4:
  221:Src/stm32f1xx_it.c **** 
  222:Src/stm32f1xx_it.c ****   /* USER CODE END TIM4_IRQn 1 */
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  227:Src/stm32f1xx_it.c **** */
  228:Src/stm32f1xx_it.c **** void SPI1_IRQHandler(void)
  229:Src/stm32f1xx_it.c **** {
-ARM GAS  /tmp/ccP3X5za.s 			page 10
+ARM GAS  /tmp/cc2k6l4J.s 			page 10
 
 
  308              		.loc 1 229 0
@@ -590,42 +590,41 @@ ARM GAS  /tmp/ccP3X5za.s 			page 1
  349              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
  350              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
  351              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 352              		.file 15 "Inc/gpio.h"
- 353              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 354              		.file 17 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
-ARM GAS  /tmp/ccP3X5za.s 			page 11
+ 352              		.file 15 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 353              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ARM GAS  /tmp/cc2k6l4J.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_it.c
-     /tmp/ccP3X5za.s:16     .text.NMI_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
-     /tmp/ccP3X5za.s:37     .text.HardFault_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:44     .text.HardFault_Handler:0000000000000000 HardFault_Handler
-     /tmp/ccP3X5za.s:58     .text.MemManage_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:65     .text.MemManage_Handler:0000000000000000 MemManage_Handler
-     /tmp/ccP3X5za.s:79     .text.BusFault_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:86     .text.BusFault_Handler:0000000000000000 BusFault_Handler
-     /tmp/ccP3X5za.s:100    .text.UsageFault_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:107    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
-     /tmp/ccP3X5za.s:121    .text.SVC_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:128    .text.SVC_Handler:0000000000000000 SVC_Handler
-     /tmp/ccP3X5za.s:141    .text.DebugMon_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
-     /tmp/ccP3X5za.s:161    .text.PendSV_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:168    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-     /tmp/ccP3X5za.s:181    .text.SysTick_Handler:0000000000000000 $t
-     /tmp/ccP3X5za.s:188    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-     /tmp/ccP3X5za.s:211    .text.DMA1_Channel3_IRQHandler:0000000000000000 $t
-     /tmp/ccP3X5za.s:218    .text.DMA1_Channel3_IRQHandler:0000000000000000 DMA1_Channel3_IRQHandler
-     /tmp/ccP3X5za.s:238    .text.DMA1_Channel3_IRQHandler:000000000000000c $d
-     /tmp/ccP3X5za.s:243    .text.TIM4_IRQHandler:0000000000000000 $t
-     /tmp/ccP3X5za.s:250    .text.TIM4_IRQHandler:0000000000000000 TIM4_IRQHandler
-     /tmp/ccP3X5za.s:293    .text.TIM4_IRQHandler:0000000000000030 $d
-     /tmp/ccP3X5za.s:299    .text.SPI1_IRQHandler:0000000000000000 $t
-     /tmp/ccP3X5za.s:306    .text.SPI1_IRQHandler:0000000000000000 SPI1_IRQHandler
-     /tmp/ccP3X5za.s:326    .text.SPI1_IRQHandler:000000000000000c $d
-     /tmp/ccP3X5za.s:335    .data.idx:0000000000000000 idx
+     /tmp/cc2k6l4J.s:16     .text.NMI_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:23     .text.NMI_Handler:0000000000000000 NMI_Handler
+     /tmp/cc2k6l4J.s:37     .text.HardFault_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:44     .text.HardFault_Handler:0000000000000000 HardFault_Handler
+     /tmp/cc2k6l4J.s:58     .text.MemManage_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:65     .text.MemManage_Handler:0000000000000000 MemManage_Handler
+     /tmp/cc2k6l4J.s:79     .text.BusFault_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:86     .text.BusFault_Handler:0000000000000000 BusFault_Handler
+     /tmp/cc2k6l4J.s:100    .text.UsageFault_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:107    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
+     /tmp/cc2k6l4J.s:121    .text.SVC_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:128    .text.SVC_Handler:0000000000000000 SVC_Handler
+     /tmp/cc2k6l4J.s:141    .text.DebugMon_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:148    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
+     /tmp/cc2k6l4J.s:161    .text.PendSV_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:168    .text.PendSV_Handler:0000000000000000 PendSV_Handler
+     /tmp/cc2k6l4J.s:181    .text.SysTick_Handler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:188    .text.SysTick_Handler:0000000000000000 SysTick_Handler
+     /tmp/cc2k6l4J.s:211    .text.DMA1_Channel3_IRQHandler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:218    .text.DMA1_Channel3_IRQHandler:0000000000000000 DMA1_Channel3_IRQHandler
+     /tmp/cc2k6l4J.s:238    .text.DMA1_Channel3_IRQHandler:000000000000000c $d
+     /tmp/cc2k6l4J.s:243    .text.TIM4_IRQHandler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:250    .text.TIM4_IRQHandler:0000000000000000 TIM4_IRQHandler
+     /tmp/cc2k6l4J.s:293    .text.TIM4_IRQHandler:0000000000000030 $d
+     /tmp/cc2k6l4J.s:299    .text.SPI1_IRQHandler:0000000000000000 $t
+     /tmp/cc2k6l4J.s:306    .text.SPI1_IRQHandler:0000000000000000 SPI1_IRQHandler
+     /tmp/cc2k6l4J.s:326    .text.SPI1_IRQHandler:000000000000000c $d
+     /tmp/cc2k6l4J.s:335    .data.idx:0000000000000000 idx
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
@@ -634,7 +633,7 @@ HAL_SYSTICK_IRQHandler
 HAL_DMA_IRQHandler
 hdma_spi1_tx
 HAL_TIM_IRQHandler
-toggle_led
+gpio_toggle_led
 htim4
 HAL_SPI_IRQHandler
 hspi1

@@ -150,13 +150,13 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
 
 void send_data(uint8_t* data)
 {
-    set_latch(0);
+    gpio_latch(0);
     uint8_t myData[] = {0xaa, 0xaa};
     HAL_SPI_Transmit_DMA(&hspi1, myData, 2);
 }
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi){
-    set_latch(1);
+    gpio_latch(1);
 }
 
 /* USER CODE BEGIN 1 */

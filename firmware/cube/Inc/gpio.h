@@ -57,8 +57,8 @@
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);
-void set_latch(uint8_t val);
-void toggle_led();
+void gpio_latch(uint8_t val);
+void gpio_toggle_led();
 
 /* USER CODE BEGIN Prototypes */
 

@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc9eh6cs.s 			page 1
+ARM GAS  /tmp/cco29Yvx.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
   31:Src/gpio.c    ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   32:Src/gpio.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   33:Src/gpio.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-ARM GAS  /tmp/cc9eh6cs.s 			page 2
+ARM GAS  /tmp/cco29Yvx.s 			page 2
 
 
   34:Src/gpio.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
   47 000e 9A61     		str	r2, [r3, #24]
   48 0010 9A69     		ldr	r2, [r3, #24]
   49 0012 02F01002 		and	r2, r2, #16
-ARM GAS  /tmp/cc9eh6cs.s 			page 3
+ARM GAS  /tmp/cco29Yvx.s 			page 3
 
 
   50 0016 0092     		str	r2, [sp]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
   95 0068 FFF7FEFF 		bl	HAL_GPIO_WritePin
   96              	.LVL1:
   76:Src/gpio.c    **** 
-ARM GAS  /tmp/cc9eh6cs.s 			page 4
+ARM GAS  /tmp/cco29Yvx.s 			page 4
 
 
   77:Src/gpio.c    ****   /*Configure GPIO pin Output Level */
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  133              		.loc 1 94 0
  134 00a6 0595     		str	r5, [sp, #20]
   95:Src/gpio.c    ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-ARM GAS  /tmp/cc9eh6cs.s 			page 5
+ARM GAS  /tmp/cco29Yvx.s 			page 5
 
 
  135              		.loc 1 95 0
@@ -266,18 +266,18 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  154 00c4 00100140 		.word	1073811456
  155              		.cfi_endproc
  156              	.LFE64:
- 158              		.section	.text.toggle_led,"ax",%progbits
+ 158              		.section	.text.gpio_toggle_led,"ax",%progbits
  159              		.align	1
- 160              		.global	toggle_led
+ 160              		.global	gpio_toggle_led
  161              		.syntax unified
  162              		.thumb
  163              		.thumb_func
  164              		.fpu softvfp
- 166              	toggle_led:
+ 166              	gpio_toggle_led:
  167              	.LFB65:
   99:Src/gpio.c    **** 
  100:Src/gpio.c    **** /* USER CODE BEGIN 2 */
- 101:Src/gpio.c    **** void toggle_led()
+ 101:Src/gpio.c    **** void gpio_toggle_led()
  102:Src/gpio.c    **** {
  168              		.loc 1 102 0
  169              		.cfi_startproc
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  182              		.loc 1 104 0
  183 000c 08BD     		pop	{r3, pc}
  184              	.L8:
-ARM GAS  /tmp/cc9eh6cs.s 			page 6
+ARM GAS  /tmp/cco29Yvx.s 			page 6
 
 
  185 000e 00BF     		.align	2
@@ -306,17 +306,17 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  187 0010 00100140 		.word	1073811456
  188              		.cfi_endproc
  189              	.LFE65:
- 191              		.section	.text.set_latch,"ax",%progbits
+ 191              		.section	.text.gpio_latch,"ax",%progbits
  192              		.align	1
- 193              		.global	set_latch
+ 193              		.global	gpio_latch
  194              		.syntax unified
  195              		.thumb
  196              		.thumb_func
  197              		.fpu softvfp
- 199              	set_latch:
+ 199              	gpio_latch:
  200              	.LFB66:
  105:Src/gpio.c    **** 
- 106:Src/gpio.c    **** void set_latch(uint8_t val)
+ 106:Src/gpio.c    **** void gpio_latch(uint8_t val)
  107:Src/gpio.c    **** {
  201              		.loc 1 107 0
  202              		.cfi_startproc
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  230 0018 00F58430 		add	r0, r0, #67584
  231 001c FFF7FEFF 		bl	HAL_GPIO_WritePin
  232              	.LVL12:
-ARM GAS  /tmp/cc9eh6cs.s 			page 7
+ARM GAS  /tmp/cco29Yvx.s 			page 7
 
 
  233 0020 F5E7     		b	.L9
@@ -368,32 +368,99 @@ ARM GAS  /tmp/cc9eh6cs.s 			page 1
  237 0024 00080140 		.word	1073809408
  238              		.cfi_endproc
  239              	.LFE66:
- 241              		.text
- 242              	.Letext0:
- 243              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 244              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 245              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
- 246              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 247              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 248              		.file 7 "/usr/arm-none-eabi/include/sys/lock.h"
- 249              		.file 8 "/usr/arm-none-eabi/include/sys/_types.h"
- 250              		.file 9 "/usr/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h"
- 251              		.file 10 "/usr/arm-none-eabi/include/sys/reent.h"
- 252              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
-ARM GAS  /tmp/cc9eh6cs.s 			page 8
+ 241              		.section	.text.gpio_layer,"ax",%progbits
+ 242              		.align	1
+ 243              		.global	gpio_layer
+ 244              		.syntax unified
+ 245              		.thumb
+ 246              		.thumb_func
+ 247              		.fpu softvfp
+ 249              	gpio_layer:
+ 250              	.LFB67:
+ 115:Src/gpio.c    **** 
+ 116:Src/gpio.c    **** void gpio_layer(uint8_t layer)
+ 117:Src/gpio.c    **** {
+ 251              		.loc 1 117 0
+ 252              		.cfi_startproc
+ 253              		@ args = 0, pretend = 0, frame = 0
+ 254              		@ frame_needed = 0, uses_anonymous_args = 0
+ 255              	.LVL13:
+ 256 0000 10B5     		push	{r4, lr}
+ 257              	.LCFI5:
+ 258              		.cfi_def_cfa_offset 8
+ 259              		.cfi_offset 4, -8
+ 260              		.cfi_offset 14, -4
+ 261 0002 0446     		mov	r4, r0
+ 118:Src/gpio.c    ****     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_All, GPIO_PIN_SET);
+ 262              		.loc 1 118 0
+ 263 0004 0122     		movs	r2, #1
+ 264 0006 4FF6FF71 		movw	r1, #65535
+ 265 000a 0748     		ldr	r0, .L20
+ 266              	.LVL14:
+ 267 000c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 268              	.LVL15:
+ 119:Src/gpio.c    ****     if(layer < 4)
+ 269              		.loc 1 119 0
+ 270 0010 032C     		cmp	r4, #3
+ 271 0012 00D9     		bls	.L19
+ 272              	.L16:
+ 120:Src/gpio.c    ****     {
+ 121:Src/gpio.c    ****         HAL_GPIO_WritePin(GPIOB, 1 << (layer + 12), GPIO_PIN_RESET);
+ 122:Src/gpio.c    ****     }
+ 123:Src/gpio.c    **** }
+ 273              		.loc 1 123 0
+ 274 0014 10BD     		pop	{r4, pc}
+ 275              	.L19:
+ 121:Src/gpio.c    ****     }
+ 276              		.loc 1 121 0
+ 277 0016 0C34     		adds	r4, r4, #12
+ 278 0018 0121     		movs	r1, #1
+ 279 001a A140     		lsls	r1, r1, r4
+ 280 001c 0022     		movs	r2, #0
+ 281 001e 89B2     		uxth	r1, r1
+ARM GAS  /tmp/cco29Yvx.s 			page 8
+
+
+ 282 0020 0148     		ldr	r0, .L20
+ 283 0022 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 284              	.LVL16:
+ 285              		.loc 1 123 0
+ 286 0026 F5E7     		b	.L16
+ 287              	.L21:
+ 288              		.align	2
+ 289              	.L20:
+ 290 0028 000C0140 		.word	1073810432
+ 291              		.cfi_endproc
+ 292              	.LFE67:
+ 294              		.text
+ 295              	.Letext0:
+ 296              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 297              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 298              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 299              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 300              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 301              		.file 7 "/usr/arm-none-eabi/include/sys/lock.h"
+ 302              		.file 8 "/usr/arm-none-eabi/include/sys/_types.h"
+ 303              		.file 9 "/usr/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h"
+ 304              		.file 10 "/usr/arm-none-eabi/include/sys/reent.h"
+ 305              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ARM GAS  /tmp/cco29Yvx.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 gpio.c
-     /tmp/cc9eh6cs.s:16     .text.MX_GPIO_Init:0000000000000000 $t
-     /tmp/cc9eh6cs.s:23     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
-     /tmp/cc9eh6cs.s:151    .text.MX_GPIO_Init:00000000000000b8 $d
-     /tmp/cc9eh6cs.s:159    .text.toggle_led:0000000000000000 $t
-     /tmp/cc9eh6cs.s:166    .text.toggle_led:0000000000000000 toggle_led
-     /tmp/cc9eh6cs.s:187    .text.toggle_led:0000000000000010 $d
-     /tmp/cc9eh6cs.s:192    .text.set_latch:0000000000000000 $t
-     /tmp/cc9eh6cs.s:199    .text.set_latch:0000000000000000 set_latch
-     /tmp/cc9eh6cs.s:237    .text.set_latch:0000000000000024 $d
+     /tmp/cco29Yvx.s:16     .text.MX_GPIO_Init:0000000000000000 $t
+     /tmp/cco29Yvx.s:23     .text.MX_GPIO_Init:0000000000000000 MX_GPIO_Init
+     /tmp/cco29Yvx.s:151    .text.MX_GPIO_Init:00000000000000b8 $d
+     /tmp/cco29Yvx.s:159    .text.gpio_toggle_led:0000000000000000 $t
+     /tmp/cco29Yvx.s:166    .text.gpio_toggle_led:0000000000000000 gpio_toggle_led
+     /tmp/cco29Yvx.s:187    .text.gpio_toggle_led:0000000000000010 $d
+     /tmp/cco29Yvx.s:192    .text.gpio_latch:0000000000000000 $t
+     /tmp/cco29Yvx.s:199    .text.gpio_latch:0000000000000000 gpio_latch
+     /tmp/cco29Yvx.s:237    .text.gpio_latch:0000000000000024 $d
+     /tmp/cco29Yvx.s:242    .text.gpio_layer:0000000000000000 $t
+     /tmp/cco29Yvx.s:249    .text.gpio_layer:0000000000000000 gpio_layer
+     /tmp/cco29Yvx.s:290    .text.gpio_layer:0000000000000028 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS

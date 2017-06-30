@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccmMBnfw.s 			page 1
+ARM GAS  /tmp/ccPdIgKe.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
   31:Src/spi.c     ****   * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
   32:Src/spi.c     ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   33:Src/spi.c     ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-ARM GAS  /tmp/ccmMBnfw.s 			page 2
+ARM GAS  /tmp/ccPdIgKe.s 			page 2
 
 
   34:Src/spi.c     ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
   63:Src/spi.c     ****   hspi1.Init.NSS = SPI_NSS_SOFT;
   51              		.loc 1 63 0
   52 0018 4FF40072 		mov	r2, #512
-ARM GAS  /tmp/ccmMBnfw.s 			page 3
+ARM GAS  /tmp/ccPdIgKe.s 			page 3
 
 
   53 001c 8261     		str	r2, [r0, #24]
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
   97              	HAL_SPI_MspInit:
   98              	.LFB65:
   75:Src/spi.c     **** 
-ARM GAS  /tmp/ccmMBnfw.s 			page 4
+ARM GAS  /tmp/ccPdIgKe.s 			page 4
 
 
   76:Src/spi.c     **** void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
   93:Src/spi.c     ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
  135              		.loc 1 93 0
  136 002a 0223     		movs	r3, #2
-ARM GAS  /tmp/ccmMBnfw.s 			page 5
+ARM GAS  /tmp/ccPdIgKe.s 			page 5
 
 
  137 002c 0393     		str	r3, [sp, #12]
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  112:Src/spi.c     ****     __HAL_LINKDMA(spiHandle,hdmatx,hdma_spi1_tx);
  173              		.loc 1 112 0
  174 005a 0B4B     		ldr	r3, .L16+8
-ARM GAS  /tmp/ccmMBnfw.s 			page 6
+ARM GAS  /tmp/ccPdIgKe.s 			page 6
 
 
  175 005c 2364     		str	r3, [r4, #64]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  220              		.thumb_func
  221              		.fpu softvfp
  223              	HAL_SPI_MspDeInit:
-ARM GAS  /tmp/ccmMBnfw.s 			page 7
+ARM GAS  /tmp/ccPdIgKe.s 			page 7
 
 
  224              	.LFB66:
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  257 0022 FFF7FEFF 		bl	HAL_DMA_DeInit
  258              	.LVL13:
  142:Src/spi.c     **** 
-ARM GAS  /tmp/ccmMBnfw.s 			page 8
+ARM GAS  /tmp/ccPdIgKe.s 			page 8
 
 
  143:Src/spi.c     ****     /* SPI1 interrupt Deinit */
@@ -467,18 +467,18 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  294 0002 83B0     		sub	sp, sp, #12
  295              	.LCFI7:
  296              		.cfi_def_cfa_offset 16
- 153:Src/spi.c     ****     set_latch(0);
+ 153:Src/spi.c     ****     gpio_latch(0);
  297              		.loc 1 153 0
  298 0004 0020     		movs	r0, #0
  299              	.LVL17:
- 300 0006 FFF7FEFF 		bl	set_latch
+ 300 0006 FFF7FEFF 		bl	gpio_latch
  301              	.LVL18:
  154:Src/spi.c     ****     uint8_t myData[] = {0xaa, 0xaa};
  302              		.loc 1 154 0
  303 000a 064B     		ldr	r3, .L29
  304 000c 1B88     		ldrh	r3, [r3]
  305 000e 02A9     		add	r1, sp, #8
-ARM GAS  /tmp/ccmMBnfw.s 			page 9
+ARM GAS  /tmp/ccPdIgKe.s 			page 9
 
 
  306 0010 21F8043D 		strh	r3, [r1, #-4]!	@ movhi
@@ -523,11 +523,11 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  343              		.cfi_def_cfa_offset 8
  344              		.cfi_offset 3, -8
  345              		.cfi_offset 14, -4
- 159:Src/spi.c     ****     set_latch(1);
+ 159:Src/spi.c     ****     gpio_latch(1);
  346              		.loc 1 159 0
  347 0002 0120     		movs	r0, #1
  348              	.LVL21:
- 349 0004 FFF7FEFF 		bl	set_latch
+ 349 0004 FFF7FEFF 		bl	gpio_latch
  350              	.LVL22:
  160:Src/spi.c     **** }
  351              		.loc 1 160 0
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  357              		.comm	hspi1,88,4
  358              		.section	.rodata
  359              		.align	2
-ARM GAS  /tmp/ccmMBnfw.s 			page 10
+ARM GAS  /tmp/ccPdIgKe.s 			page 10
 
 
  360              		.set	.LANCHOR0,. + 0
@@ -570,29 +570,29 @@ ARM GAS  /tmp/ccmMBnfw.s 			page 1
  384              		.file 16 "Inc/gpio.h"
  385              		.file 17 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
  386              		.file 18 "Inc/dma.h"
-ARM GAS  /tmp/ccmMBnfw.s 			page 11
+ARM GAS  /tmp/ccPdIgKe.s 			page 11
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 spi.c
-     /tmp/ccmMBnfw.s:16     .text.MX_SPI1_Init:0000000000000000 $t
-     /tmp/ccmMBnfw.s:23     .text.MX_SPI1_Init:0000000000000000 MX_SPI1_Init
-     /tmp/ccmMBnfw.s:83     .text.MX_SPI1_Init:000000000000003c $d
+     /tmp/ccPdIgKe.s:16     .text.MX_SPI1_Init:0000000000000000 $t
+     /tmp/ccPdIgKe.s:23     .text.MX_SPI1_Init:0000000000000000 MX_SPI1_Init
+     /tmp/ccPdIgKe.s:83     .text.MX_SPI1_Init:000000000000003c $d
                             *COM*:0000000000000058 hspi1
-     /tmp/ccmMBnfw.s:90     .text.HAL_SPI_MspInit:0000000000000000 $t
-     /tmp/ccmMBnfw.s:97     .text.HAL_SPI_MspInit:0000000000000000 HAL_SPI_MspInit
-     /tmp/ccmMBnfw.s:207    .text.HAL_SPI_MspInit:0000000000000080 $d
+     /tmp/ccPdIgKe.s:90     .text.HAL_SPI_MspInit:0000000000000000 $t
+     /tmp/ccPdIgKe.s:97     .text.HAL_SPI_MspInit:0000000000000000 HAL_SPI_MspInit
+     /tmp/ccPdIgKe.s:207    .text.HAL_SPI_MspInit:0000000000000080 $d
                             *COM*:0000000000000038 hdma_spi1_tx
-     /tmp/ccmMBnfw.s:216    .text.HAL_SPI_MspDeInit:0000000000000000 $t
-     /tmp/ccmMBnfw.s:223    .text.HAL_SPI_MspDeInit:0000000000000000 HAL_SPI_MspDeInit
-     /tmp/ccmMBnfw.s:269    .text.HAL_SPI_MspDeInit:0000000000000030 $d
-     /tmp/ccmMBnfw.s:276    .text.send_data:0000000000000000 $t
-     /tmp/ccmMBnfw.s:283    .text.send_data:0000000000000000 send_data
-     /tmp/ccmMBnfw.s:321    .text.send_data:0000000000000024 $d
-     /tmp/ccmMBnfw.s:327    .text.HAL_SPI_TxCpltCallback:0000000000000000 $t
-     /tmp/ccmMBnfw.s:334    .text.HAL_SPI_TxCpltCallback:0000000000000000 HAL_SPI_TxCpltCallback
-     /tmp/ccmMBnfw.s:359    .rodata:0000000000000000 $d
-     /tmp/ccmMBnfw.s:365    .rodata.MX_SPI1_Init.str1.4:0000000000000000 $d
+     /tmp/ccPdIgKe.s:216    .text.HAL_SPI_MspDeInit:0000000000000000 $t
+     /tmp/ccPdIgKe.s:223    .text.HAL_SPI_MspDeInit:0000000000000000 HAL_SPI_MspDeInit
+     /tmp/ccPdIgKe.s:269    .text.HAL_SPI_MspDeInit:0000000000000030 $d
+     /tmp/ccPdIgKe.s:276    .text.send_data:0000000000000000 $t
+     /tmp/ccPdIgKe.s:283    .text.send_data:0000000000000000 send_data
+     /tmp/ccPdIgKe.s:321    .text.send_data:0000000000000024 $d
+     /tmp/ccPdIgKe.s:327    .text.HAL_SPI_TxCpltCallback:0000000000000000 $t
+     /tmp/ccPdIgKe.s:334    .text.HAL_SPI_TxCpltCallback:0000000000000000 HAL_SPI_TxCpltCallback
+     /tmp/ccPdIgKe.s:359    .rodata:0000000000000000 $d
+     /tmp/ccPdIgKe.s:365    .rodata.MX_SPI1_Init.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
@@ -605,5 +605,5 @@ HAL_NVIC_EnableIRQ
 HAL_GPIO_DeInit
 HAL_DMA_DeInit
 HAL_NVIC_DisableIRQ
-set_latch
+gpio_latch
 HAL_SPI_Transmit_DMA

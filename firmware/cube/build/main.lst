@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccpld9tI.s 			page 1
+ARM GAS  /tmp/ccN20eIG.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
   31:Src/main.c    ****   * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
   32:Src/main.c    ****   * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
   33:Src/main.c    ****   * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-ARM GAS  /tmp/ccpld9tI.s 			page 2
+ARM GAS  /tmp/ccN20eIG.s 			page 2
 
 
   34:Src/main.c    ****   * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
   88:Src/main.c    ****   /* USER CODE BEGIN SysInit */
   89:Src/main.c    ****   /* USER CODE END SysInit */
   90:Src/main.c    **** 
-ARM GAS  /tmp/ccpld9tI.s 			page 3
+ARM GAS  /tmp/ccN20eIG.s 			page 3
 
 
   91:Src/main.c    ****   /* Initialize all configured peripherals */
@@ -137,12 +137,12 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
  104:Src/main.c    ****   /* USER CODE END WHILE */
  105:Src/main.c    **** 
  106:Src/main.c    ****   /* USER CODE BEGIN 3 */
- 107:Src/main.c    ****       uint8_t data1[] = {0xaa, 0xaa};
+ 107:Src/main.c    ****       uint8_t data1[] = {0xa5, 0xa5};
  108:Src/main.c    ****       send_data(&data1[0]);
  109:Src/main.c    ****       HAL_Delay(100);
- 110:Src/main.c    ****       /*uint8_t data2[] = {0x55, 0x55};*/
- 111:Src/main.c    ****       /*send_data(&data2[0]);*/
- 112:Src/main.c    ****       /*HAL_Delay(100);*/
+ 110:Src/main.c    ****       uint8_t data2[] = {0x5a, 0x5a};
+ 111:Src/main.c    ****       send_data(&data2[0]);
+ 112:Src/main.c    ****       HAL_Delay(100);
  113:Src/main.c    **** 
  114:Src/main.c    ****   }
  115:Src/main.c    ****   /* USER CODE END 3 */
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
  145:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
  146:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
  147:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-ARM GAS  /tmp/ccpld9tI.s 			page 4
+ARM GAS  /tmp/ccN20eIG.s 			page 4
 
 
  148:Src/main.c    **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
  122:Src/main.c    **** 
   52              		.loc 1 122 0
   53 0000 00B5     		push	{lr}
-ARM GAS  /tmp/ccpld9tI.s 			page 5
+ARM GAS  /tmp/ccN20eIG.s 			page 5
 
 
   54              	.LCFI0:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
   95              		.loc 1 149 0
   96 0034 01A8     		add	r0, sp, #4
   97 0036 FFF7FEFF 		bl	HAL_RCC_ClockConfig
-ARM GAS  /tmp/ccpld9tI.s 			page 6
+ARM GAS  /tmp/ccN20eIG.s 			page 6
 
 
   98              	.LVL2:
@@ -352,13 +352,13 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
  140              		.align	2
  141              	.L9:
  142 0074 D34D6210 		.word	274877907
- 143 0078 00000000 		.word	.LC1
+ 143 0078 00000000 		.word	.LC2
  144              		.cfi_endproc
  145              	.LFE65:
  147              		.section	.text.main,"ax",%progbits
  148              		.align	1
  149              		.global	main
-ARM GAS  /tmp/ccpld9tI.s 			page 7
+ARM GAS  /tmp/ccN20eIG.s 			page 7
 
 
  150              		.syntax unified
@@ -408,80 +408,101 @@ ARM GAS  /tmp/ccpld9tI.s 			page 1
  188              	.LBB2:
  107:Src/main.c    ****       send_data(&data1[0]);
  189              		.loc 1 107 0 discriminator 1
- 190 001c 054B     		ldr	r3, .L14
- 191 001e 1B88     		ldrh	r3, [r3]
+ 190 001c 094C     		ldr	r4, .L14
+ 191 001e 2388     		ldrh	r3, [r4]
  192 0020 02A8     		add	r0, sp, #8
- 193 0022 20F8043D 		strh	r3, [r0, #-4]!	@ movhi
+ 193 0022 20F8083D 		strh	r3, [r0, #-8]!	@ movhi
  108:Src/main.c    ****       HAL_Delay(100);
  194              		.loc 1 108 0 discriminator 1
  195 0026 FFF7FEFF 		bl	send_data
  196              	.LVL15:
- 109:Src/main.c    ****       /*uint8_t data2[] = {0x55, 0x55};*/
+ 109:Src/main.c    ****       uint8_t data2[] = {0x5a, 0x5a};
  197              		.loc 1 109 0 discriminator 1
-ARM GAS  /tmp/ccpld9tI.s 			page 8
+ARM GAS  /tmp/ccN20eIG.s 			page 8
 
 
  198 002a 6420     		movs	r0, #100
  199 002c FFF7FEFF 		bl	HAL_Delay
  200              	.LVL16:
- 201 0030 F4E7     		b	.L12
- 202              	.L15:
- 203 0032 00BF     		.align	2
- 204              	.L14:
- 205 0034 00000000 		.word	.LANCHOR0
- 206              	.LBE2:
- 207              		.cfi_endproc
- 208              	.LFE64:
- 210              		.section	.rodata
- 211              		.align	2
- 212              		.set	.LANCHOR0,. + 0
- 213              	.LC0:
- 214 0000 AA       		.byte	-86
- 215 0001 AA       		.byte	-86
- 216              		.section	.rodata.SystemClock_Config.str1.4,"aMS",%progbits,1
- 217              		.align	2
- 218              	.LC1:
- 219 0000 5372632F 		.ascii	"Src/main.c\000"
- 219      6D61696E 
- 219      2E6300
- 220              		.text
- 221              	.Letext0:
- 222              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 223              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 224              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
- 225              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
- 226              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 227              		.file 7 "/usr/arm-none-eabi/include/sys/lock.h"
- 228              		.file 8 "/usr/arm-none-eabi/include/sys/_types.h"
- 229              		.file 9 "/usr/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h"
- 230              		.file 10 "/usr/arm-none-eabi/include/sys/reent.h"
- 231              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 232              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
- 233              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
- 234              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 235              		.file 15 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
- 236              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 237              		.file 17 "Inc/spi.h"
- 238              		.file 18 "Inc/tim.h"
- 239              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
- 240              		.file 20 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
- 241              		.file 21 "Inc/gpio.h"
- 242              		.file 22 "Inc/dma.h"
-ARM GAS  /tmp/ccpld9tI.s 			page 9
+ 110:Src/main.c    ****       send_data(&data2[0]);
+ 201              		.loc 1 110 0 discriminator 1
+ 202 0030 A388     		ldrh	r3, [r4, #4]
+ 203 0032 02A8     		add	r0, sp, #8
+ 204 0034 20F8043D 		strh	r3, [r0, #-4]!	@ movhi
+ 111:Src/main.c    ****       HAL_Delay(100);
+ 205              		.loc 1 111 0 discriminator 1
+ 206 0038 FFF7FEFF 		bl	send_data
+ 207              	.LVL17:
+ 112:Src/main.c    **** 
+ 208              		.loc 1 112 0 discriminator 1
+ 209 003c 6420     		movs	r0, #100
+ 210 003e FFF7FEFF 		bl	HAL_Delay
+ 211              	.LVL18:
+ 212 0042 EBE7     		b	.L12
+ 213              	.L15:
+ 214              		.align	2
+ 215              	.L14:
+ 216 0044 00000000 		.word	.LANCHOR0
+ 217              	.LBE2:
+ 218              		.cfi_endproc
+ 219              	.LFE64:
+ 221              		.section	.rodata
+ 222              		.align	2
+ 223              		.set	.LANCHOR0,. + 0
+ 224              	.LC0:
+ 225 0000 A5       		.byte	-91
+ 226 0001 A5       		.byte	-91
+ 227 0002 0000     		.space	2
+ 228              	.LC1:
+ 229 0004 5A       		.byte	90
+ 230 0005 5A       		.byte	90
+ 231              		.section	.rodata.SystemClock_Config.str1.4,"aMS",%progbits,1
+ 232              		.align	2
+ 233              	.LC2:
+ 234 0000 5372632F 		.ascii	"Src/main.c\000"
+ 234      6D61696E 
+ 234      2E6300
+ 235              		.text
+ 236              	.Letext0:
+ 237              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 238              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 239              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 240              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 241              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 242              		.file 7 "/usr/arm-none-eabi/include/sys/lock.h"
+ 243              		.file 8 "/usr/arm-none-eabi/include/sys/_types.h"
+ 244              		.file 9 "/usr/lib/gcc/arm-none-eabi/7.1.0/include/stddef.h"
+ 245              		.file 10 "/usr/arm-none-eabi/include/sys/reent.h"
+ 246              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 247              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h"
+ 248              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h"
+ 249              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 250              		.file 15 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h"
+ARM GAS  /tmp/ccN20eIG.s 			page 9
+
+
+ 251              		.file 16 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 252              		.file 17 "Inc/spi.h"
+ 253              		.file 18 "Inc/tim.h"
+ 254              		.file 19 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
+ 255              		.file 20 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ 256              		.file 21 "Inc/gpio.h"
+ 257              		.file 22 "Inc/dma.h"
+ARM GAS  /tmp/ccN20eIG.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccpld9tI.s:16     .text._Error_Handler:0000000000000000 $t
-     /tmp/ccpld9tI.s:23     .text._Error_Handler:0000000000000000 _Error_Handler
-     /tmp/ccpld9tI.s:39     .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccpld9tI.s:46     .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccpld9tI.s:142    .text.SystemClock_Config:0000000000000074 $d
-     /tmp/ccpld9tI.s:148    .text.main:0000000000000000 $t
-     /tmp/ccpld9tI.s:155    .text.main:0000000000000000 main
-     /tmp/ccpld9tI.s:205    .text.main:0000000000000034 $d
-     /tmp/ccpld9tI.s:211    .rodata:0000000000000000 $d
-     /tmp/ccpld9tI.s:217    .rodata.SystemClock_Config.str1.4:0000000000000000 $d
+     /tmp/ccN20eIG.s:16     .text._Error_Handler:0000000000000000 $t
+     /tmp/ccN20eIG.s:23     .text._Error_Handler:0000000000000000 _Error_Handler
+     /tmp/ccN20eIG.s:39     .text.SystemClock_Config:0000000000000000 $t
+     /tmp/ccN20eIG.s:46     .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/ccN20eIG.s:142    .text.SystemClock_Config:0000000000000074 $d
+     /tmp/ccN20eIG.s:148    .text.main:0000000000000000 $t
+     /tmp/ccN20eIG.s:155    .text.main:0000000000000000 main
+     /tmp/ccN20eIG.s:216    .text.main:0000000000000044 $d
+     /tmp/ccN20eIG.s:222    .rodata:0000000000000000 $d
+     /tmp/ccN20eIG.s:232    .rodata.SystemClock_Config.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
 
 UNDEFINED SYMBOLS
