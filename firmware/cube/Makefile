@@ -209,4 +209,6 @@ clean:
 #######################################
 -include $(shell mkdir .dep 2>/dev/null) $(wildcard .dep/*)
 
+flash: all
+	st-flash write $(BUILDDIR)/$(PROJECT).bin 0x8000000
 # *** EOF ***
