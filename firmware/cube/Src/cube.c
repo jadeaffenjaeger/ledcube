@@ -82,13 +82,13 @@ void cube_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
     uint8_t x0, x1, y0, y1, z0, z1;
     cube_linearExtrapolate(x, value, &xAx);
 
-    cube_linearExtrapolate(y, xAx->p1, &yAx0);
-    cube_linearExtrapolate(y, xAx->p2, &yAx1);
+    cube_linearExtrapolate(y, xAx.p1, &yAx0);
+    cube_linearExtrapolate(y, xAx.p2, &yAx1);
 
-    cube_linearExtrapolate(z, yAx0->p1, &zAx0);
-    cube_linearExtrapolate(z, yAx0->p2, &zAx1);
-    cube_linearExtrapolate(z, yAx1->p1, &zAx2);
-    cube_linearExtrapolate(z, yAx1->p2, &zAx3);
+    cube_linearExtrapolate(z, yAx0.p1, &zAx0);
+    cube_linearExtrapolate(z, yAx0.p2, &zAx1);
+    cube_linearExtrapolate(z, yAx1.p1, &zAx2);
+    cube_linearExtrapolate(z, yAx1.p2, &zAx3);
 
     x0 = x / 16;
     x1 = x0 + 1;
@@ -97,14 +97,14 @@ void cube_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
     z0 = z / 16;
     z1 = z0 + 1;
 
-    cube_setPx(x0, y0, z0, zAx0->p1);
-    cube_setPx(x0, y0, z1, zAx0->p2);
-    cube_setPx(x0, y1, z0, zAx1->p1);
-    cube_setPx(x0, y1, z1, zAx1->p2);
-    cube_setPx(x1, y0, z0, zAx2->p1);
-    cube_setPx(x1, y0, z1, zAx2->p2);
-    cube_setPx(x1, y1, z0, zAx3->p1);
-    cube_setPx(x1, y1, z1, zAx3->p2);
+    cube_setPx(x0, y0, z0, zAx0.p1);
+    cube_setPx(x0, y0, z1, zAx0.p2);
+    cube_setPx(x0, y1, z0, zAx1.p1);
+    cube_setPx(x0, y1, z1, zAx1.p2);
+    cube_setPx(x1, y0, z0, zAx2.p1);
+    cube_setPx(x1, y0, z1, zAx2.p2);
+    cube_setPx(x1, y1, z0, zAx3.p1);
+    cube_setPx(x1, y1, z1, zAx3.p2);
 }
 
 
