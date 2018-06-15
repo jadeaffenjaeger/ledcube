@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -61,7 +61,7 @@ void MX_SPI1_Init(void)
   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
   hspi1.Init.CLKPhase = SPI_PHASE_1EDGE;
   hspi1.Init.NSS = SPI_NSS_SOFT;
-  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_2;
+  hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_16;
   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
   hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
   hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
@@ -82,14 +82,14 @@ void HAL_SPI_MspInit(SPI_HandleTypeDef* spiHandle)
   /* USER CODE BEGIN SPI1_MspInit 0 */
 
   /* USER CODE END SPI1_MspInit 0 */
-    /* Peripheral clock enable */
+    /* SPI1 clock enable */
     __HAL_RCC_SPI1_CLK_ENABLE();
   
     /**SPI1 GPIO Configuration    
     PA5     ------> SPI1_SCK
     PA7     ------> SPI1_MOSI 
     */
-    GPIO_InitStruct.Pin = SER_DATA_Pin|SER_CLK_Pin;
+    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -135,7 +135,7 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
     PA5     ------> SPI1_SCK
     PA7     ------> SPI1_MOSI 
     */
-    HAL_GPIO_DeInit(GPIOA, SER_DATA_Pin|SER_CLK_Pin);
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_5|GPIO_PIN_7);
 
     /* SPI1 DMA DeInit */
     HAL_DMA_DeInit(spiHandle->hdmatx);
@@ -148,19 +148,10 @@ void HAL_SPI_MspDeInit(SPI_HandleTypeDef* spiHandle)
   }
 } 
 
-void send_data(uint8_t* data)
-{
-    gpio_latch(0);
-    uint8_t myData[] = {0xaa, 0xaa};
-    HAL_SPI_Transmit_DMA(&hspi1, myData, 2);
-}
-
-void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef* hspi){
-    gpio_latch(1);
-}
-
 /* USER CODE BEGIN 1 */
-
+void spi_send(uint8_t* data, uint16_t len) {
+    HAL_SPI_Transmit_DMA(&hspi1, data, len);
+}
 /* USER CODE END 1 */
 
 /**

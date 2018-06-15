@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -57,11 +57,10 @@
 /* USER CODE END Private defines */
 
 void MX_GPIO_Init(void);
-void gpio_latch(uint8_t val);
-void gpio_toggle_led();
 
 /* USER CODE BEGIN Prototypes */
-
+void gpio_latchSet(void);
+void gpio_latchReset(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

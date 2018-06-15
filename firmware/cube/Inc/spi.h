@@ -10,7 +10,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -60,10 +60,9 @@ extern SPI_HandleTypeDef hspi1;
 extern void _Error_Handler(char *, int);
 
 void MX_SPI1_Init(void);
-void send_data(uint8_t* data);
 
 /* USER CODE BEGIN Prototypes */
-
+void spi_send(uint8_t* data, uint16_t len);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
