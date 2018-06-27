@@ -9,11 +9,6 @@
 #define SIZE 8
 #define RESOLUTION 4
 
-typedef struct SExtrapolation {
-    uint8_t p1;
-    uint8_t p2;
-} SExtrapolation_t;
-
 void cube_init(void);
 void cube_fillBitBuffer(uint8_t bitPosition);
 uint8_t* cube_getNext(void);

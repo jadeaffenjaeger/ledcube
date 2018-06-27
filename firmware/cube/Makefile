@@ -34,6 +34,10 @@ Drivers/STM32F1xx_HAL_Driver \
 Application/User/Src/main.c \
 Drivers/CMSIS \
 Application \
+Application/User/Src/cube.c \
+Application/User/Src/animations.c \
+Application/User/Src/lfsr.c \
+Application/User/Src/draw.c \
 Application/User/Src/gpio.c \
 Application/User/Src/spi.c \
 Application/User/Src/tim.c \
@@ -61,6 +65,9 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
 Src/main.c \
 Src/gpio.c \
 Src/cube.c \
+Src/animations.c \
+Src/draw.c \
+Src/lfsr.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
 Src/dma.c \
 Src/stm32f1xx_it.c \
@@ -210,5 +217,5 @@ clean:
 -include $(shell mkdir .dep 2>/dev/null) $(wildcard .dep/*)
 
 flash: all
-	st-flash write $(BUILDDIR)/$(PROJECT).bin 0x8000000
+	st-flash write $(BUILD_DIR)/$(TARGET).bin 0x8000000
 # *** EOF ***
