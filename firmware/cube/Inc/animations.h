@@ -8,6 +8,7 @@
 #include "lfsr.h"
 
 void anim_rainingCubes();
+void anim_rainingDots();
 
 #ifdef __cplusplus
 }
