@@ -29,14 +29,15 @@ int8_t sine_getSinLut(uint8_t idx) {
     }
     if (idx < 128) {
         idx -= 64;
-        return sine_lut[64 - idx]
+        return sine_lut[63 - idx]
     }
     if (idx < 192) {
         idx -= 128;
         return -sine_lut[idx];
     }
+
     idx -= 192;
-    return -sine_lut[64 - idx];
+    return -sine_lut[63 - idx];
 }
 
 int8_t sine_sin(int32_t theta) {
