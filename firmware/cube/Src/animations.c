@@ -1,12 +1,60 @@
 #include "animations.h"
 
+/*
+ *This file implements all high-level animations that will be called from the main loop
+ */
+
 lfsr_t random = {.state = 0xDEADBEEF, .mask = ((1 << 31) | (1 << 21))};
+
+void anim_sine() {
+
+}
+
+void anim_fallinggrid() {
+    uint8_t targets[8][8];
+    for(uint8_t xx = 0; xx < 8; xx++) {
+        for(uint8_t yy = 0; yy < 8; yy++) {
+            uint8_t rand = lfsr_get8(&random);
+            targets[xx][yy] = rand % 8;
+        }
+    }
+
+    for(uint8_t i = 0; i < 8; i++){
+        cube_fill(0);
+        for(uint8_t xx = 0; xx < 8; xx++) {
+            for(uint8_t yy = 0; yy < 8; yy++) {
+                uint8_t zz = targets[xx][yy];
+                if(zz < i) {
+                    cube_setPx(xx, yy, zz, 0xff);
+                } else {
+                    cube_setPx(xx, yy, i, 0xff);
+                }
+            }
+        }
+        HAL_Delay(50);
+    }
+
+    for(uint8_t i = 0; i < 8; i++){
+        cube_fill(0);
+        for(uint8_t xx = 0; xx < 8; xx++) {
+            for(uint8_t yy = 0; yy < 8; yy++) {
+                uint8_t zz = targets[xx][yy];
+                if(zz > i) {
+                    cube_setPx(xx, yy, zz, 0xff);
+                } else {
+                    cube_setPx(xx, yy, i, 0xff);
+                }
+            }
+        }
+        HAL_Delay(50);
+    }
+}
 
 void anim_rainingCubes() {
     cube_fill(0);
     uint8_t cubeState[4][4];
     memset(&cubeState, 0, 16);
-        uint8_t filled = 0;
+    uint8_t filled = 0;
 
     while(filled == 0) {
         uint32_t x, y;
@@ -27,7 +75,6 @@ void anim_rainingCubes() {
         draw_cube(2 * x, 2 * y, cubeState[x][y] *2, 2, 0xff);
         cubeState[x][y]++;
 
-
         filled = 1;
         for(uint32_t xx = 0; xx < 4; xx++) {
             for(uint32_t yy = 0; yy < 4; yy++) {
@@ -43,7 +90,7 @@ void anim_rainingDots() {
     cube_fill(0);
     uint8_t cubeState[8][8];
     memset(&cubeState, 0, 64);
-        uint8_t filled = 0;
+    uint8_t filled = 0;
 
     while(filled == 0) {
         uint32_t x, y;
