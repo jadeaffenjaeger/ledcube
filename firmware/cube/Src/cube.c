@@ -1,7 +1,8 @@
 #include "cube.h"
-#include "stm32f1xx.h"
-#include "string.h"
 
+/*
+ *This file implements all cube low-level access functions as well the BAM handling routines that are called from SPI/timer intterrupt
+ */
 
 static uint8_t cube[SIZE][SIZE][SIZE];
 static uint8_t bit_buffer[SIZE][SIZE+1];
@@ -29,6 +30,7 @@ static uint8_t lut16_8[] = {
 };
 
 
+// Reset cube contents
 void cube_init(void) {
     /* Write layer byte for each layer in buffer*/
     for(uint32_t i = 0; i < SIZE; i++) {
@@ -63,6 +65,7 @@ uint8_t* cube_getNext(void) {
     return bit_buffer[current_layer];
 }
 
+// Update Cube BAM FSM
 void cube_update(void) {
     static uint8_t current_bitPosition      = 0;
     static uint16_t current_bitCounter      = 0;
@@ -81,11 +84,13 @@ void cube_update(void) {
     }
 }
 
+// Fill cube with constant value
 void cube_fill(uint8_t val) {
     val = lut16_8[val];
     memset(cube, val, SIZE*SIZE*SIZE);
 }
 
+// Set single pixel in cube to specified brightness
 void cube_setPx(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
     if(x >= SIZE || y >= SIZE || z >= SIZE){
         return;

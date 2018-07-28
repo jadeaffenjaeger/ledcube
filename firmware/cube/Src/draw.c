@@ -1,5 +1,9 @@
 #include "draw.h"
 
+/*
+ *This file implements all higher level drawing functions that implement additional control logic.
+ */
+
 // Base linear extrapolation function
 void draw_linearExtrapolate(uint8_t point, uint8_t value, SExtrapolation_t* buffer) {
 
@@ -47,6 +51,7 @@ void draw_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
     cube_setPx(x1, y1, z1, zAx3.p2);
 }
 
+// Draw a filled cube of size n at the provided coordinates
 void draw_cube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
     for(uint32_t xx = x; xx < x + size; xx++) {
         for(uint32_t yy = y; yy < y + size; yy++) {
@@ -56,3 +61,4 @@ void draw_cube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
         }
     }
 }
+

@@ -122,10 +122,13 @@ int main(void)
         /* cube_update();*/
         /* HAL_Delay(1);*/
         /* gpio_latchSet();*/
+        cube_fill(0x0);
+        anim_expandingCube();
+        anim_rainingDots();
         anim_rainingCubes();
-        HAL_Delay(100);
-        cube_fill(0);
-        HAL_Delay(100);
+        /* HAL_Delay(100);*/
+        /* HAL_Delay(100);*/
+
 
     }
     /* USER CODE END 3 */

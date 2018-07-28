@@ -5,9 +5,14 @@
 #endif
 
 #include "stm32f1xx.h"
+#include "sine.h"
 #include "lfsr.h"
+#include "draw.h"
+#include "cube.h"
 
+void anim_fallinggrid();
 void anim_rainingCubes();
+void anim_rainingDots();
 
 #ifdef __cplusplus
 }
