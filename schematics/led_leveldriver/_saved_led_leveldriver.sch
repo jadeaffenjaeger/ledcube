@@ -1074,4 +1074,23 @@ Wire Wire Line
 	1450 6450 1700 6450
 Wire Wire Line
 	1700 6450 1700 6250
+$Comp
+L led_leveldriver-rescue:C C6
+U 1 1 5B5EF735
+P 6000 2400
+F 0 "C6" H 6025 2500 50  0000 L CNN
+F 1 "0.1uF" H 6025 2300 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 6038 2250 50  0001 C CNN
+F 3 "" H 6000 2400 50  0000 C CNN
+	1    6000 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5650 2150 6000 2150
+Wire Wire Line
+	6000 2150 6000 2250
+Wire Wire Line
+	5650 2600 6000 2600
+Wire Wire Line
+	6000 2600 6000 2550
 $EndSCHEMATC

@@ -1,4 +1,4 @@
-update=Mon 09 Apr 2018 20:13:45 CEST
+update=Sat 28 Jul 2018 21:13:54 CEST
 version=1
 last_client=kicad
 [cvpcb]
@@ -6,43 +6,6 @@ version=1
 NetIExt=net
 [general]
 version=1
-[eeschema]
-version=1
-LibDir=../../schematics;/home/elias/ledcube/schematics
-[eeschema/libraries]
-LibName1=power
-LibName2=device
-LibName3=switches
-LibName4=relays
-LibName5=motors
-LibName6=transistors
-LibName7=conn
-LibName8=linear
-LibName9=regul
-LibName10=74xx
-LibName11=cmos4000
-LibName12=adc-dac
-LibName13=memory
-LibName14=xilinx
-LibName15=microcontrollers
-LibName16=dsp
-LibName17=microchip
-LibName18=analog_switches
-LibName19=motorola
-LibName20=texas
-LibName21=intel
-LibName22=audio
-LibName23=interface
-LibName24=digital-audio
-LibName25=philips
-LibName26=display
-LibName27=cypress
-LibName28=siliconi
-LibName29=opto
-LibName30=atmel
-LibName31=contrib
-LibName32=valves
-LibName33=tpic
 [pcbnew]
 version=1
 PageLayoutDescrFile=
@@ -62,3 +25,6 @@ SolderMaskMinWidth=0
 DrawSegmentWidth=0.2
 BoardOutlineThickness=0.15
 ModuleOutlineThickness=0.15
+[eeschema]
+version=1
+LibDir=
