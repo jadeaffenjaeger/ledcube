@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name led_leveldriver-rescue)(type Legacy)(uri ${KIPRJMOD}/led_leveldriver-rescue.lib)(options "")(descr ""))
+  (lib (name 74hct245)(type Legacy)(uri ${KIPRJMOD}/libraries/74hct245.lib)(options "")(descr ""))
+  (lib (name bluepill_breakouts)(type Legacy)(uri ${KIPRJMOD}/libraries/bluepill_breakouts.lib)(options "")(descr ""))
+)
