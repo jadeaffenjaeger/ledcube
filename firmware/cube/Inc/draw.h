@@ -12,6 +12,12 @@ typedef struct SExtrapolation {
     uint8_t p2;
 } SExtrapolation_t;
 
+typedef enum EPlane {
+    XY,
+    XZ,
+    YZ
+} EPlane_t;
+
 void draw_linearExtrapolate(uint8_t point, uint8_t value, SExtrapolation_t* buffer);
 void draw_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value);
 

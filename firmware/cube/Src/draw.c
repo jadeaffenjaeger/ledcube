@@ -62,3 +62,22 @@ void draw_cube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
     }
 }
 
+void draw_plane(EPlane_t plane, uint8_t coord, uint8_t val) {
+    for(uint8_t i = 0; i < SIZE; i++) {
+        for(uint8_t j = 0; j < SIZE; j++) {
+            switch(plane){
+                case XY:
+                    cube_setPx(i, j, coord, val);
+                    break;
+                case XZ:
+                    cube_setPx(i, coord, j, val);
+                    break;
+                case YZ:
+                    cube_setPx(coord, i, j, val);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+}

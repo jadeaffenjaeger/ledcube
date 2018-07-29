@@ -12,7 +12,7 @@
  */
 
 /* 64 value Sine LUT:*/
-const uint8_t sine_lut = {
+const uint8_t sine_lut[] = {
     0, 3, 6, 9, 13, 16, 19, 22, 
     25, 28, 31, 34, 37, 40, 43, 46, 
     49, 52, 55, 58, 61, 64, 66, 69, 
@@ -29,7 +29,7 @@ int8_t sine_getSinLut(uint8_t idx) {
     }
     if (idx < 128) {
         idx -= 64;
-        return sine_lut[63 - idx]
+        return sine_lut[63 - idx];
     }
     if (idx < 192) {
         idx -= 128;
@@ -42,12 +42,12 @@ int8_t sine_getSinLut(uint8_t idx) {
 
 int8_t sine_sin(int32_t theta) {
     if (theta < 0) {
-        return -sine_sin(-(theta))
+        return -sine_sin(-(theta));
     }
     if (theta > 255) {
         theta %= 255;
     }
-    return sine_getSinLut(theta)
+    return sine_getSinLut(theta);
 }
 
 int8_t sine_cos(int32_t theta) {
@@ -55,7 +55,7 @@ int8_t sine_cos(int32_t theta) {
         return sine_sin(-(theta - 64));
     }
     else {
-        return sine_sin(theta - 64)
+        return sine_sin(theta - 64);
     }
 }
 

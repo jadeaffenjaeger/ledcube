@@ -123,8 +123,16 @@ int main(void)
         /* HAL_Delay(1);*/
         /* gpio_latchSet();*/
         cube_fill(0x0);
-        anim_expandingCube();
+        anim_sineSolid();
+        anim_scroll();
+        for(uint8_t i = 0; i < 10; i++) {
+            anim_fallinggrid();
+        }
+        anim_planes();
+        anim_sine();
+        /* anim_expandingCube();*/
         anim_rainingDots();
+        anim_sineCenter();
         anim_rainingCubes();
         /* HAL_Delay(100);*/
         /* HAL_Delay(100);*/

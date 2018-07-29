@@ -65,6 +65,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
 Src/main.c \
 Src/gpio.c \
 Src/cube.c \
+Src/sine.c \
 Src/animations.c \
 Src/draw.c \
 Src/lfsr.c \

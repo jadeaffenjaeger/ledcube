@@ -6,8 +6,8 @@ extern "C" {
 
 #include "stm32f1xx.h"
 
-int8_t sine_sin(uint32_t theta);
-int8_t sine_cos(uint32_t theta);
+int8_t sine_sin(int32_t theta);
+int8_t sine_cos(int32_t theta);
 
 #ifdef __cplusplus
 }

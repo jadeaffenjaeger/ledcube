@@ -99,3 +99,17 @@ void cube_setPx(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
     value = lut16_8[value];
     cube[x][y][z] = value;
 }
+
+void cube_shiftLeft() {
+    for(uint32_t xx = 0; xx < SIZE; xx++) {
+        for(uint32_t yy = 0; yy < SIZE; yy++) {
+            for(uint32_t zz = 0; zz < SIZE; zz++) {
+                if(xx == SIZE -1) {
+                    cube[xx][yy][zz] = 0;
+                } else {
+                    cube[xx][yy][zz] = cube[xx + 1][yy][zz];
+                }
+            }
+        }
+    }
+}

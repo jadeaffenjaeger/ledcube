@@ -10,6 +10,10 @@
 #include "draw.h"
 #include "cube.h"
 
+#include <math.h>
+
+void anim_sine();
+void anim_fallinggrid();
 void anim_fallinggrid();
 void anim_rainingCubes();
 void anim_rainingDots();
