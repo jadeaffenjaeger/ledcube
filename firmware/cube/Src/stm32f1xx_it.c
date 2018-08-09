@@ -221,7 +221,7 @@ void TIM4_IRQHandler(void)
     /* USER CODE END TIM4_IRQn 0 */
     HAL_TIM_IRQHandler(&htim4);
     /* USER CODE BEGIN TIM4_IRQn 1 */
-    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+    /* HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);*/
 
     gpio_latchReset();
     ptr = cube_getNext();

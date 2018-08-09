@@ -11,7 +11,7 @@
 #define RESOLUTION 4
 
 void cube_init(void);
-void cube_fillBitBuffer(uint8_t bitPosition);
+void cube_fillBitBuffer(void);
 uint8_t* cube_getNext(void);
 void cube_update(void);
 
