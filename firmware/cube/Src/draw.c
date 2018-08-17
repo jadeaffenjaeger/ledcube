@@ -81,3 +81,24 @@ void draw_plane(EPlane_t plane, uint8_t coord, uint8_t val) {
         }
     }
 }
+
+void draw_hollowCube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
+    for(uint32_t xx = x; xx < x + size; xx++) {
+            cube_setPx(xx, y, z, value);
+            cube_setPx(xx, y + size - 1, z, value);
+            cube_setPx(xx, y, z + size -1, value);
+            cube_setPx(xx, y + size - 1, z + size -1, value);
+    }
+    for(uint32_t yy = y + 1; yy < y + size; yy++) {
+            cube_setPx(x, yy, z, value);
+            cube_setPx(x + size -1, yy, z, value);
+            cube_setPx(x, yy, z + size -1, value);
+            cube_setPx(x + size -1, yy, z + size -1, value);
+    }
+    for(uint32_t zz = z + 1; zz < z + size; zz++) {
+            cube_setPx(x, y, zz, value);
+            cube_setPx(x + size -1, y, zz, value);
+            cube_setPx(x, y + size -1, zz, value);
+            cube_setPx(x + size -1, y + size -1, zz, value);
+    }
+}

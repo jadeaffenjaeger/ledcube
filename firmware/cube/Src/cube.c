@@ -102,3 +102,17 @@ void cube_shiftLeft() {
         }
     }
 }
+
+void cube_shiftBack() {
+    for(uint32_t xx = 0; xx < SIZE; xx++) {
+        for(uint32_t yy = 0; yy < SIZE; yy++) {
+            for(uint32_t zz = 0; zz < SIZE; zz++) {
+                if(yy == SIZE -1) {
+                    cube[xx][yy][zz] = 0;
+                } else {
+                    cube[xx][yy][zz] = cube[xx][yy+1][zz];
+                }
+            }
+        }
+    }
+}

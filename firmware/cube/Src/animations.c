@@ -20,19 +20,18 @@ void anim_sine() {
 }
 
 void anim_planes() {
-    for(uint8_t j = 0; j < 5; j++) {
-
+    for(uint8_t j = 0; j < 15; j++) {
         for(uint8_t i = 0; i < 8; i++) {
             cube_fill(0);
             draw_plane(XZ, i, 0xff);
             draw_plane(YZ, i, 0xff);
-            HAL_Delay(50);
+            HAL_Delay(80);
         }
         for(uint8_t i = 0; i < 8; i++) {
             cube_fill(0);
             draw_plane(XZ, 7-i, 0xff);
             draw_plane(YZ, 7-i, 0xff);
-            HAL_Delay(50);
+            HAL_Delay(80);
         }
     }
 }
@@ -60,7 +59,7 @@ void anim_sineCenter() {
 
 void anim_sineSolid() {
     cube_fill(0);
-    for(uint16_t i = 0; i < 2048; i++) {
+    for(uint16_t i = 0; i < 1024; i++) {
         for(uint8_t xx = 0; xx < 8; xx++) {
             for(uint8_t yy = 0; yy < 8; yy++) {
                 int16_t theta = ((xx) - (yy)+ i) *4;
@@ -82,11 +81,11 @@ void anim_sineSolid() {
 void anim_scroll() {
     cube_fill(0);
     for(uint16_t i = 0; i < 512; i++ ) {
-        cube_shiftLeft();
+        cube_shiftBack();
         uint8_t rand1 = lfsr_get8(&random);
         uint8_t rand2 = lfsr_get8(&random);
-        cube_setPx(SIZE-1, rand1 % 8, (rand1 >> 3) % 8, 0xff);
-        cube_setPx(SIZE-1, rand2 % 8, (rand2 >> 3) % 8, 0xff);
+        cube_setPx(rand1 %8, SIZE-1, (rand1 >> 3) % 8, 0xff);
+        cube_setPx(rand2 %8, SIZE-1, (rand2 >> 3) % 8, 0xff);
         HAL_Delay(60);
     }
 }
@@ -112,7 +111,7 @@ void anim_fallinggrid() {
                 }
             }
         }
-        HAL_Delay(40);
+        HAL_Delay(100);
     }
 
     for(uint8_t i = 0; i < 8; i++){
@@ -127,7 +126,7 @@ void anim_fallinggrid() {
                 }
             }
         }
-        HAL_Delay(80);
+        HAL_Delay(100);
     }
 }
 
@@ -203,6 +202,26 @@ void anim_rainingDots() {
             }
         }
     }
+}
+
+void anim_skeleton() {
+    for(uint8_t j = 0; j < 10; j++){
+        for(int8_t i = 0; i < 4; i++) {
+            cube_fill(0);
+            draw_hollowCube(i,i,i,(4-i)*2,255);
+            HAL_Delay(100);
+        }
+        for(int8_t i = 3; i >= 0; i--) {
+            cube_fill(0);
+            draw_hollowCube(i,i,i,(4-i)*2,255);
+            HAL_Delay(100);
+        }
+    }
+    for(int8_t i = 0; i < 4; i++) {
+        draw_hollowCube(i,i,i,(4-i)*2,255);
+        HAL_Delay(300);
+    }
+    HAL_Delay(2000);
 }
 
 void anim_expandingCube(){

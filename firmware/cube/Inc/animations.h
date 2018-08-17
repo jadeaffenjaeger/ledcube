@@ -17,6 +17,7 @@ void anim_fallinggrid();
 void anim_fallinggrid();
 void anim_rainingCubes();
 void anim_rainingDots();
+void anim_skeleton();
 
 #ifdef __cplusplus
 }

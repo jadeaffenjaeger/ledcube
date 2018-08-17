@@ -112,30 +112,18 @@ int main(void)
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
-        /* gpio_latchReset();*/
-        /* uint8_t* ptr = cube_getNext();*/
-        /* spi_send(ptr, 9);*/
-        /* cube_update();*/
-
-        /* HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);*/
-        /* val++;*/
-        /* cube_update();*/
-        /* HAL_Delay(1);*/
-        /* gpio_latchSet();*/
         cube_fill(0x0);
-        anim_sineSolid();
+        anim_skeleton();
+        anim_rainingCubes();
+        anim_sine();
         anim_scroll();
+        anim_planes();
         for(uint8_t i = 0; i < 10; i++) {
             anim_fallinggrid();
         }
-        anim_planes();
-        anim_sine();
-        /* anim_expandingCube();*/
+        anim_sineSolid();
         anim_rainingDots();
         anim_sineCenter();
-        anim_rainingCubes();
-        /* HAL_Delay(100);*/
-        /* HAL_Delay(100);*/
 
 
     }
