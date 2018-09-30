@@ -24,15 +24,15 @@ void draw_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value) {
 
     SExtrapolation_t xAx, yAx0, yAx1, zAx0, zAx1, zAx2, zAx3;
     uint8_t x0, x1, y0, y1, z0, z1;
-    cube_linearExtrapolate(x, value, &xAx);
+    draw_linearExtrapolate(x, value, &xAx);
 
-    cube_linearExtrapolate(y, xAx.p1, &yAx0);
-    cube_linearExtrapolate(y, xAx.p2, &yAx1);
+    draw_linearExtrapolate(y, xAx.p1, &yAx0);
+    draw_linearExtrapolate(y, xAx.p2, &yAx1);
 
-    cube_linearExtrapolate(z, yAx0.p1, &zAx0);
-    cube_linearExtrapolate(z, yAx0.p2, &zAx1);
-    cube_linearExtrapolate(z, yAx1.p1, &zAx2);
-    cube_linearExtrapolate(z, yAx1.p2, &zAx3);
+    draw_linearExtrapolate(z, yAx0.p1, &zAx0);
+    draw_linearExtrapolate(z, yAx0.p2, &zAx1);
+    draw_linearExtrapolate(z, yAx1.p1, &zAx2);
+    draw_linearExtrapolate(z, yAx1.p2, &zAx3);
 
     x0 = x / 16;
     x1 = x0 + 1;
@@ -62,6 +62,7 @@ void draw_cube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
     }
 }
 
+// Draw an 8x8 plane with given orientation
 void draw_plane(EPlane_t plane, uint8_t coord, uint8_t val) {
     for(uint8_t i = 0; i < SIZE; i++) {
         for(uint8_t j = 0; j < SIZE; j++) {
@@ -82,6 +83,7 @@ void draw_plane(EPlane_t plane, uint8_t coord, uint8_t val) {
     }
 }
 
+// draws the outer grid lines of a cube with a given size at a given destination
 void draw_hollowCube(uint8_t x, uint8_t y, uint8_t z, uint8_t size, uint8_t value) {
     for(uint32_t xx = x; xx < x + size; xx++) {
             cube_setPx(xx, y, z, value);

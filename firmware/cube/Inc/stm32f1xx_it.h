@@ -43,6 +43,8 @@
 #include "stm32f1xx_hal.h"
 #include "main.h"
 #include "gpio.h"
+#include "cube.h"
+#include "spi.h"
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/

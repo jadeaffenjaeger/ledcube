@@ -18,7 +18,8 @@ void cube_update(void);
 void cube_fill(uint8_t val);
 void cube_drawPoint(uint8_t x, uint8_t y, uint8_t z, uint8_t value);
 void cube_setPx(uint8_t x, uint8_t y, uint8_t z, uint8_t value);
-void cube_shiftLeft();
+void cube_shiftLeft(void);
+void cube_shiftBack(void);
 
 #ifdef __cplusplus
 }

@@ -12,12 +12,16 @@
 
 #include <math.h>
 
-void anim_sine();
-void anim_fallinggrid();
-void anim_fallinggrid();
-void anim_rainingCubes();
-void anim_rainingDots();
-void anim_skeleton();
+void anim_sine(void);
+void anim_planes(void);
+void anim_sineCenter();
+void anim_sineSolid();
+void anim_scroll();
+void anim_fallinggrid(void);
+void anim_rainingCubes(void);
+void anim_rainingDots(void);
+void anim_skeleton(void);
+void anim_expandingCube();
 
 #ifdef __cplusplus
 }
